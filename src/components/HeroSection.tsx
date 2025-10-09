@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, Calendar } from "lucide-react";
+import pdf from '../assets/files/SHivananda-Resume.pdf'
 export default function HeroSection() {
   return (
     <div>
@@ -37,7 +38,7 @@ export default function HeroSection() {
               className="mt-4 flex flex-wrap gap-3 justify-center sm:mt-6 md:mt-8"
             >
               <a
-                href=""
+                href={pdf}
                 download="Shivananda-resume.pdf"
                 className="font-space-grotesk-500 flex items-center gap-2 rounded-full border-2 border-[#494949] bg-[#1C1C1C] px-4 py-2 text-sm transition-all hover:border-[#5A5A5A] hover:bg-[#2C2C2C] sm:gap-3 sm:px-6 sm:py-2.5 sm:text-base md:px-8 md:py-3"
               >
