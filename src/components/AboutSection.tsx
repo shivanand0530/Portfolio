@@ -5,7 +5,7 @@ export default function AboutSection() {
     <section id="about" className="bg-black text-gray-300 font-space-grotesk">
       <div className="px-4 sm:px-[5%] mt-0 py-6">
         <p className="mb-4 sm:mb-6 leading-relaxed text-base sm:text-lg md:text-xl text-[#A6A6A6]">
-          I'm  a Mobile app developer, a Frontend Developer, and a CyberSecurity specialized individual, graduated in BTech - CSE from Alliance University, Bengalutu.
+          I'm  a Mobile app developer, a Frontend Developer, and a CyberSecurity specialized individual, graduated in BTech - CSE from Alliance University, Bengaluru.
           I blend design thinking with technical expertise to create intuitive and scalable
           digital solutions.
         </p>

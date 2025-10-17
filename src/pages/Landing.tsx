@@ -32,7 +32,7 @@ export default function Landing() {
             <div className="text-white">
               <Navbar />
               <HeroSection />
-              <Heading heading="Stack" />
+              <Heading heading="Skills" />
               <StackSection />
               <Separator className="my-12" />
               <Heading heading="Projects" showButton buttonLink="#" />
