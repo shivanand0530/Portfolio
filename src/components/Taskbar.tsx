@@ -80,25 +80,19 @@ export default function Taskbar() {
         className="rounded-full bg-[#282828] p-1.5 sm:p-2 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:scale-105 active:scale-95 touch-manipulation"
         onTouchStart={() => {}}
       >
-      <svg 
-        fill="#ffffff" 
-        height="18" 
-        width="18" 
-        className="sm:w-7 sm:h-7"
-        version="1.1" 
-        id="Capa_1" 
-        xmlns="http://www.w3.org/2000/svg" 
-        xmlnsXlink="http://www.w3.org/1999/xlink" 
-        viewBox="-21.6 -21.6 259.20 259.20" 
-        xmlSpace="preserve"
-      >
-        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-        <g id="SVGRepo_iconCarrier"> 
-          <path d="M108,0C48.353,0,0,48.353,0,108s48.353,108,108,108s108-48.353,108-108S167.647,0,108,0z M156.657,60L107.96,98.498 L57.679,60H156.657z M161.667,156h-109V76.259l50.244,38.11c1.347,1.03,3.34,1.545,4.947,1.545c1.645,0,3.073-0.54,4.435-1.616 l49.374-39.276V156z"></path> 
-        </g>
-      </svg>
-
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="h-4.5 w-4.5 sm:h-6 sm:w-6 text-white"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <rect x="3" y="5" width="18" height="14" rx="2" />
+  <path d="M3 7l9 6l9-6" />
+</svg>
       </a>
      
       <div
