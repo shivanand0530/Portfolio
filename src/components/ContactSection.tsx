@@ -3,7 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="bg-black text-center py-34 px-[5%] font-space-grotesk">
+    <>
+    <section className="border-b-2 border-[#1C1C1F] bg-black text-center py-28 px-[5%] font-space-grotesk">
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
         Let's work together
       </h2>
@@ -28,5 +29,7 @@ export default function ContactSection() {
         </motion.a>
       </div>
     </section>
+    <div className="h-8 border-b-2 border-[#1C1C1F] bg-black bg-[radial-gradient(circle,#1D202A_1px,transparent_1px)] [background-size:12px_12px] sm:h-16 sm:[background-size:14px_14px] md:h-18 md:[background-size:16px_16px]"></div>
+    </>
   );
-}
+} 

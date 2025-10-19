@@ -32,18 +32,19 @@ export default function Landing() {
             <div className="text-white">
               <Navbar />
               <HeroSection />
+              <Separator />
               <Heading heading="Skills" />
               <StackSection />
-              <Separator className="my-12" />
+              <Separator />
               <Heading heading="Projects" showButton buttonLink="#" />
               <ProjectsSection />
-              <Separator className="my-12" />
+              <Separator />
               <Heading heading="Experience" />
               <ExperienceSection />
-              <Separator className="my-12" />
+              <Separator  />
               <Heading heading="About Me" />
               <AboutSection />
-              <Separator className="my-12" />
+              <Separator />
               <ContactSection />
               <Footer />
             </div>

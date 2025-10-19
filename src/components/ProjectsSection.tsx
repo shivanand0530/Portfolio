@@ -38,12 +38,16 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="font-space-grotesk bg-black px-[5%] py-12 sm:py-16">
+    <>
+    <section id="projects" className=" border-b-2 border-[#1C1C1F] bg-black font-space-grotesk bg-black px-[5%] py-12 sm:py-16">
       <div className="space-y-0">
         {projects.map((project, index) => (
           <ProjectCard key={project.title} {...project} index={index} />
         ))}
       </div>
     </section>
+    <div className="h-12 border-b-2 border-[#1C1C1F] bg-black bg-[radial-gradient(circle,#1D202A_1px,transparent_1px)] [background-size:12px_12px] sm:h-16 sm:[background-size:14px_14px] md:h-18 md:[background-size:16px_16px]">
+    </div>
+    </>
   );
 }
