@@ -5,7 +5,7 @@ import "./index.css";
 import Landing from "./pages/Landing.tsx";
 import "./types/global.d.ts";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
