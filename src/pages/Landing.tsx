@@ -12,6 +12,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import Taskbar from "@/components/Taskbar";
 import Container from "@/components/Container";
 import Heading from "@/components/Heading";
+import CustomCursor from "@/components/customCursor";
 import { Separator } from "@/components/ui/separator";
 
 export default function Landing() {
@@ -52,6 +53,7 @@ export default function Landing() {
         </motion.div>
       )}
       {!loading && <Taskbar />}
+      {!loading && <CustomCursor />}
     </>
   );
 }
