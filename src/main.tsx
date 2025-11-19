@@ -4,10 +4,12 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import Landing from "./pages/Landing.tsx";
 import "./types/global.d.ts";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Landing />
+    <SpeedInsights />
     <Toaster />
   </StrictMode>
 );
