@@ -5,7 +5,7 @@ export default function Taskbar() {
 
   return (
     <div className="fixed bottom-4 sm:bottom-8 left-1/2 z-50 flex -translate-x-1/2 transform items-center gap-2 sm:gap-4 rounded-full border border-white/20 bg-white/10 p-2 sm:p-3 shadow-lg backdrop-blur-sm">
-      <a
+      {/* <a
         href="https://x.com/kohliisque0645"
         target="_blank"
         rel="noopener noreferrer"
@@ -25,6 +25,30 @@ export default function Taskbar() {
               <path d="M26.37,26l-8.795,-12.822l0.015,0.012l7.93,-9.19h-2.65l-6.46,7.48l-5.13,-7.48h-6.95l8.211,11.971l-0.001,-0.001l-8.66,10.03h2.65l7.182,-8.322l5.708,8.322zM10.23,6l12.34,18h-2.1l-12.35,-18z"></path>
             </g>
           </g>
+        </svg>
+      </a> */}
+  <a
+        href="https://cal.com/shivanand-k"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full bg-[#282828] p-2 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:scale-105"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 21 21"
+        >
+          <text
+            x="0"
+            y="15"
+            fontFamily="Arial, sans-serif"
+            fontSize="12"
+            fill="#ffffff"
+            fontWeight="bold"
+          >
+            Cal.
+          </text>
         </svg>
       </a>
       <a
