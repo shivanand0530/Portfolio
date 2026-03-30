@@ -1,91 +1,87 @@
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { useState, useRef } from "react";
+import { Github, ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
   image?: string;
-  link?: string;
+  link?: string; // GitHub link
+  live?: string | null; // Live Demo link
   index: number;
 }
 
-export default function ProjectCard({ title, description, image, link, index }: ProjectCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect();
-      setCursorPos({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
-    }
-  };
-
-  const handleClick = () => {
+export default function ProjectCard({ title, description, tags, image, link, live, index }: ProjectCardProps) {
+  const handleGithubClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (link) {
       window.open(link, "_blank", "noopener,noreferrer");
     }
   };
 
+  const handleLiveClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (live) {
+      window.open(live, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div className="relative font-space-grotesk">
-      <div
-        ref={cardRef}
-        className={`relative bg-black pb-6 transition-all duration-300 ${link ? "cursor-pointer" : ""}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onMouseMove={handleMouseMove}
-        onClick={handleClick}
-      >
-        <div
-          className="mx-2 flex flex-row items-center justify-between gap-3 border-b-2 border-[#404043] pt-3 pb-3 transition-transform duration-300 sm:mx-4 sm:gap-6 sm:pt-4 sm:pb-4 lg:mx-18 lg:gap-10 lg:pt-3 lg:pb-3"
-          style={{
-            transform: isHovered ? "scale(1.02)" : "scale(1)",
-          }}
-        >
-          <div className="p-2 pt-4 pb-4 sm:p-4 lg:p-4">
-            <div className="text-2xl font-semibold text-white transition-colors duration-300 sm:text-3xl lg:text-5xl">
+      <div className="relative bg-black pb-8 border-b border-[#1C1C1F]">
+        <div className="mx-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-6 pb-6 lg:mx-20">
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
               {title}
-            </div>
-            <div className="sm:text-md mt-1 text-lg text-gray-400 transition-colors duration-300 sm:mt-2 lg:mt-3 lg:text-lg">
+            </h3>
+            <p className="mt-2 text-base text-gray-400 sm:text-lg lg:text-xl">
               {description}
+            </p>
+            
+            {/* Tags below description */}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span 
+                  key={tag} 
+                  className="px-2 py-0.5 text-[10px] uppercase tracking-wider font-medium rounded-md border border-[#2D2D30] bg-[#1C1C1F] text-gray-400"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Links below tags */}
+            <div className="mt-6 flex items-center gap-4">
+              {link && (
+                <button 
+                  onClick={handleGithubClick}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#2D2D30] bg-[#1C1C1F] hover:bg-[#2D2D30] transition-colors group cursor-pointer"
+                >
+                  <Github size={16} className="text-gray-400 group-hover:text-white" />
+                  <span className="text-xs font-medium text-gray-400 group-hover:text-white">View on GitHub</span>
+                </button>
+              )}
+              {live && (
+                <button 
+                  onClick={handleLiveClick}
+                  className="flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-white transition-colors cursor-pointer group"
+                >
+                  <ExternalLink size={14} className="text-gray-500 group-hover:text-white" />
+                  <span className="text-gray-500 group-hover:text-white">Live Demo</span>
+                </button>
+              )}
             </div>
           </div>
-          <div className="rounded-xl border border-[#535355] bg-[#18181B] p-1 transition-all duration-300 sm:p-2">
+
+          <div className="w-full md:w-auto shrink-0 rounded-xl border border-[#2D2D30] bg-[#1C1C1F] p-1.5 overflow-hidden">
             {image && (
               <img
                 src={image}
                 alt={`${title} screenshot`}
-                className="h-15 w-28 rounded-lg object-cover transition-all duration-300 sm:h-32 sm:w-44 lg:h-[150px] lg:w-[300px]"
-                style={{
-                  filter: isHovered ? "brightness(1.1)" : "brightness(1)",
-                }}
+                className="h-40 w-full md:h-32 md:w-56 lg:h-[180px] lg:w-[320px] rounded-lg object-cover grayscale opacity-80"
               />
             )}
           </div>
         </div>
-        {isHovered && link && (
-          <div
-            className="pointer-events-none fixed z-50 flex -translate-x-1/2 -translate-y-full transform items-center gap-2 rounded-xl border border-gray-700 bg-[#1C1C1F]/95 px-4 py-2 text-sm font-medium text-white shadow-2xl backdrop-blur-md transition-all duration-200 ease-out"
-            style={{
-              left:
-                cursorPos.x +
-                (cardRef.current?.getBoundingClientRect().left || 0),
-              top:
-                cursorPos.y +
-                (cardRef.current?.getBoundingClientRect().top || 0) -
-                20,
-            }}
-          >
-            Visit Site
-            <ArrowUpRight size={16} className="opacity-80" />
-          </div>
-        )}
       </div>
     </div>
   );
